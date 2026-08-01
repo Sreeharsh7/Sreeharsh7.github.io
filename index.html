@@ -77,6 +77,27 @@ nav .wrap{
 
 /* ---------- HERO ---------- */
 .hero{padding:88px 0 64px;}
+.hero-top{display:grid; grid-template-columns:1fr 180px; gap:40px; align-items:start; margin-bottom:8px;}
+@media (max-width:720px){ .hero-top{grid-template-columns:1fr; } .hero-photo{order:-1; width:120px;} }
+.hero-photo{width:180px;}
+.hero-photo .frame{
+  width:100%; aspect-ratio:1/1;
+  overflow:hidden;
+  border:1px solid var(--ink);
+  background:var(--panel);
+  position:relative;
+}
+.hero-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(15%);}
+.hero-photo .cap{
+  margin-top:8px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.68rem;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  display:flex; justify-content:space-between;
+}
+.hero-photo .cap span:last-child{color:var(--coral);}
 .eyebrow{
   font-family:'IBM Plex Mono', monospace;
   font-size:0.78rem;
@@ -342,9 +363,19 @@ footer p.sub{color:var(--ink-soft); max-width:420px; margin-bottom:24px;}
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Research Assistant — Molecular Biophysics Unit, IISc Bengaluru</div>
-    <h1>Sreeharsh K</h1>
-    <p class="role">I build deep learning methods that find and design <strong>metamorphic proteins</strong> — sequences that fold into more than one shape. My work sits between structural bioinformatics, protein language models, and generative modelling of structural uncertainty.</p>
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">Research Assistant — Molecular Biophysics Unit, IISc Bengaluru</div>
+        <h1>Sreeharsh K</h1>
+        <p class="role">I build deep learning methods that find and design <strong>metamorphic proteins</strong> — sequences that fold into more than one shape. My work sits between structural bioinformatics, protein language models, and generative modelling of structural uncertainty.</p>
+      </div>
+      <div class="hero-photo">
+        <div class="frame">
+          <img src="photo.jpg" alt="Sreeharsh K">
+        </div>
+        <div class="cap"><span>SK</span><span>IISc · 2026</span></div>
+      </div>
+    </div>
     <div class="cta-row">
       <a href="mailto:sreeharshmayoor@gmail.com" class="btn primary">Email me</a>
       <a href="https://github.com/Sreeharsh7" target="_blank" class="btn">GitHub</a>
